@@ -20,6 +20,11 @@ export default function Chrono() {
           <span>{sessionTimeFixed / 60}</span>
           <button className="plus">+</button>
         </div>
+        <div className="box-btns break">
+          <button className="minus">-</button>
+          <span>{breakTimeFixed / 60}</span>
+          <button className="plus">+</button>
+        </div>
       </div>
     </div>
   )
