@@ -76,8 +76,16 @@ export default function Chrono() {
     }
   }
 
+  const handleReset = () => {
+    if (workingChrono) {
+      setWorkingChrono(!workingChrono)
+    }
+    setSessionTime(sessionTimeFixed)
+    setBreakTime(breakTimeFixed)
+  }
+
   return (
-    <div className="container-chrono">
+    <div className={workingChrono ? "container-chrono anim-glow" : "container-chrono" }>
       <div className="container-config">
         <div className="box-btns session">
           <button onClick={handleSession} className="minus">
@@ -117,7 +125,7 @@ export default function Chrono() {
         <button onClick={playPause}>
           <img src={workingChrono ? PauseImg : PlayImg} alt="" />
         </button>
-        <button>
+        <button onClick={handleReset}>
           <img src={ResetImg} alt="" />
         </button>
       </div>
